@@ -12,7 +12,76 @@
 
 - Git：最新版本
 - 现代浏览器：Chrome、Firefox、Edge最新版本
-  
+
+## 开发环境搭建
+
+### 1. 安装Node.js和npm
+
+#### Windows
+1. 访问 [Node.js官网](https://nodejs.org/)
+2. 下载并安装LTS版本
+3. 安装完成后，打开命令提示符验证安装：
+   ```
+   node -v
+   npm -v
+   ```
+
+#### macOS
+1. 使用Homebrew安装：
+   ```
+   brew install node
+   ```
+2. 或访问Node.js官网下载安装包
+3. 验证安装：
+   ```
+   node -v
+   npm -v
+   ```
+
+#### Linux (Ubuntu)
+1. 使用apt安装：
+   ```
+   sudo apt update
+   sudo apt install nodejs npm
+   ```
+2. 验证安装：
+   ```
+   node -v
+   npm -v
+   ```
+
+### 2. 安装Git/不想安装直接下压缩包
+
+#### Windows
+1. 访问 [Git官网](https://git-scm.com/)
+2. 下载并安装最新版本
+3. 安装时选择默认选项即可
+4. 验证安装：
+   ```
+   git --version
+   ```
+
+#### macOS
+1. 使用Homebrew安装：
+   ```
+   brew install git
+   ```
+2. 验证安装：
+   ```
+   git --version
+   ```
+
+#### Linux (Ubuntu)
+1. 使用apt安装：
+   ```
+   sudo apt update
+   sudo apt install git
+   ```
+2. 验证安装：
+   ```
+   git --version
+   ```
+
 ### 部署步骤
 
 1. 克隆仓库
