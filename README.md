@@ -1,4 +1,4 @@
-# 策划工作台 (Game Design Workbench)
+# 游戏策划工作台 (Game Design Workbench)
 
 ## 📋 项目介绍
 本项目由Trae 和 cursor工具配合claude 3.5\3.7 sonnet模型进行开发
@@ -30,7 +30,7 @@
   
 </div>
 ## 部署此项目
-- 查看CONTRIBUTING.md文件
+- 查看 [CONTRIBUTING.md](CONTRIBUTING.md) 文件
 
 ## 📄 许可证
 
