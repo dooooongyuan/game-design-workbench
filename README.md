@@ -29,7 +29,8 @@
   ![GitHub license](https://img.shields.io/github/license/yourusername/game-design-workbench)
   
 </div>
-
+## 部署此项目
+- 查看CONTRIBUTING.md文件
 
 ## 📄 许可证
 
