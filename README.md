@@ -1,10 +1,8 @@
 # 策划工作台 (Game Design Workbench)
 
-<p align="center">
-  <img src="https://via.placeholder.com/200x200.png?text=策划工作台" alt="策划工作台 Logo" width="200"/>
-</p>
 
-<div align="center">
+
+<div align="center">项目预览
   
   ![GitHub stars](https://img.shields.io/github/stars/yourusername/game-design-workbench?style=social)
   ![GitHub forks](https://img.shields.io/github/forks/yourusername/game-design-workbench?style=social)
