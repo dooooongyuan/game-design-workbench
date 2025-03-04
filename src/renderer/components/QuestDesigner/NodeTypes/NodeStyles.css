@@ -1,0 +1,173 @@
+/* 通用节点样式 */
+.node {
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  border: 2px solid #ccc;
+}
+
+.node-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.node-title {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+.node-content {
+  font-size: 12px;
+}
+
+.node-description {
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.node-objective,
+.node-condition,
+.node-character,
+.node-text,
+.node-reward-type,
+.node-reward-value {
+  margin-top: 4px;
+  padding: 4px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  word-break: break-word;
+}
+
+/* 条件节点分支样式 */
+.node-branches {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 5px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border: 1px dashed #ddd;
+}
+
+.node-branch {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+}
+
+.branch-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.branch-dot.success {
+  background-color: #4CAF50;
+}
+
+.branch-dot.failure {
+  background-color: #F44336;
+}
+
+.node-branch.success {
+  color: #2E7D32;
+}
+
+.node-branch.failure {
+  color: #C62828;
+}
+
+/* 开始节点样式 */
+.start-node {
+  border-color: #4CAF50;
+  background: #E8F5E9;
+}
+
+.start-node .node-header {
+  border-bottom-color: #A5D6A7;
+}
+
+.start-node .node-title {
+  color: #2E7D32;
+}
+
+/* 任务节点样式 */
+.task-node {
+  border-color: #2196F3;
+  background: #E3F2FD;
+}
+
+.task-node .node-header {
+  border-bottom-color: #90CAF9;
+}
+
+.task-node .node-title {
+  color: #1565C0;
+}
+
+/* 条件节点样式 */
+.condition-node {
+  border-color: #FF9800;
+  background: #FFF3E0;
+}
+
+.condition-node .node-header {
+  border-bottom-color: #FFCC80;
+}
+
+.condition-node .node-title {
+  color: #EF6C00;
+}
+
+/* 对话节点样式 */
+.dialogue-node {
+  border-color: #9C27B0;
+  background: #F3E5F5;
+}
+
+.dialogue-node .node-header {
+  border-bottom-color: #CE93D8;
+}
+
+.dialogue-node .node-title {
+  color: #7B1FA2;
+}
+
+/* 奖励节点样式 */
+.reward-node {
+  border-color: #FFC107;
+  background: #FFF8E1;
+}
+
+.reward-node .node-header {
+  border-bottom-color: #FFE082;
+}
+
+.reward-node .node-title {
+  color: #FF8F00;
+}
+
+/* 结束节点样式 */
+.end-node {
+  border-color: #F44336;
+  background: #FFEBEE;
+}
+
+.end-node .node-header {
+  border-bottom-color: #EF9A9A;
+}
+
+.end-node .node-title {
+  color: #C62828;
+}
+
+/* 选中节点样式 */
+.selected {
+  box-shadow: 0 0 0 2px #555;
+} 

@@ -1,0 +1,30 @@
+.character-tags-container {
+  margin-bottom: 20px;
+}
+
+.character-tags-container .ant-tag {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.edit-tag {
+  user-select: none;
+  margin-right: 8px;
+}
+
+.tag-input {
+  width: 78px;
+  margin-right: 8px;
+  vertical-align: top;
+}
+
+.site-tag-plus {
+  background: #fff;
+  border-style: dashed;
+  cursor: pointer;
+}
+
+.site-tag-plus:hover {
+  border-color: #1890ff;
+  color: #1890ff;
+}

@@ -1,0 +1,910 @@
+/* 经济系统压力测试仪样式 */
+.economic-pressure-test {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #f1f5f9;
+  color: #334155;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+/* 头部样式 - 全新设计 */
+.economic-pressure-test-header {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background: #1e293b;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  position: relative;
+  height: 64px;
+  border-bottom: none;
+}
+
+.economic-pressure-test-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #0f172a;
+  color: #f8fafc;
+  letter-spacing: 0.5px;
+  border-right: none;
+  position: relative;
+}
+
+.economic-pressure-test-title::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #0f172a;
+}
+
+.economic-pressure-test-tabs {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.economic-pressure-test-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.economic-pressure-test-tabs .tab-button {
+  height: 100%;
+  padding: 0 24px;
+  margin: 0;
+  background-color: transparent;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid transparent;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.economic-pressure-test-tabs .tab-button::after {
+  display: none;
+}
+
+.economic-pressure-test-tabs .tab-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+  transform: none;
+  border-bottom-color: rgba(96, 165, 250, 0.7);
+  opacity: 1;
+}
+
+.economic-pressure-test-tabs .tab-button.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: none;
+  border-bottom: 3px solid #60a5fa;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+
+.economic-pressure-test-tabs .tab-button.active::after {
+  display: none;
+}
+
+.economic-pressure-test-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 10px;
+  height: 100%;
+  padding: 0 16px;
+  background-color: #0f172a;
+}
+
+.action-button {
+  padding: 8px 16px;
+  background-color: #334155;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  letter-spacing: 0.3px;
+  text-shadow: none;
+}
+
+.action-button:hover {
+  background-color: #475569;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.action-button.primary {
+  background-color: #3b82f6;
+  border: none;
+}
+
+.action-button.primary:hover {
+  background-color: #2563eb;
+  border: none;
+}
+
+.tutorial-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #334155;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: none;
+  letter-spacing: 0.3px;
+  border: none;
+  text-shadow: none;
+}
+
+.tutorial-toggle:hover {
+  background-color: #475569;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+/* 主体内容样式 */
+.economic-pressure-test-body {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 24px;
+  gap: 24px;
+  position: relative;
+}
+
+/* 教程面板样式 */
+.tutorial-panel {
+  background-color: #ecf0f1;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  max-height: 300px;
+}
+
+.tutorial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #dfe6e9;
+  border-bottom: 1px solid #d1d8e0;
+}
+
+.tutorial-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.tutorial-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(41, 128, 185, 0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.tutorial-toggle:hover {
+  background-color: rgba(52, 152, 219, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tutorial-toggle span {
+  margin-left: 6px;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.tutorial-sections {
+  display: flex;
+  overflow-x: auto;
+  padding: 16px 24px;
+  scroll-behavior: smooth;
+}
+
+.tutorial-section {
+  flex: 0 0 auto;
+  width: 350px;
+  padding: 0;
+  margin-right: 24px;
+  transition: all 0.3s ease;
+}
+
+.tutorial-section:hover {
+  transform: translateY(-3px);
+}
+
+.tutorial-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  height: 100%;
+  transition: all 0.2s ease;
+}
+
+.tutorial-content:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-content h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e3f2fd;
+  padding-bottom: 8px;
+}
+
+.tutorial-content ol {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.tutorial-content li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.tutorial-content strong {
+  color: #2980b9;
+  font-weight: 600;
+}
+
+.tutorial-tips {
+  margin-top: 18px;
+  padding: 12px 15px;
+  background-color: #e3f2fd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border-left: 4px solid #2196f3;
+  color: #0d47a1;
+}
+
+.tutorial-tips strong {
+  color: #0d47a1;
+}
+
+/* 自定义滚动条 */
+.tutorial-sections::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tutorial-sections::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.tutorial-sections::-webkit-scrollbar-thumb {
+  background: #bdc3c7;
+  border-radius: 4px;
+}
+
+.tutorial-sections::-webkit-scrollbar-thumb:hover {
+  background: #95a5a6;
+}
+
+/* 内容区域样式 */
+.economic-pressure-test-content {
+  flex-grow: 1;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+/* 系统编辑器样式 */
+.system-editor, .simulation-panel, .results-viewer {
+  display: flex;
+  flex-grow: 1;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.system-list, .scenario-list, .result-list {
+  width: 280px;
+  background-color: #f8fafc;
+  border-radius: 6px;
+  padding: 16px;
+  margin-right: 20px;
+  overflow-y: auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.system-list h3, .scenario-list h3, .result-list h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #0f172a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.system-list ul, .scenario-list ul, .result-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.system-list li, .scenario-list li, .result-list li {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e9ecef;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.system-list li:hover, .scenario-list li:hover, .result-list li:hover {
+  background-color: #f8f9fa;
+}
+
+.system-list li.selected, .scenario-list li.selected, .result-list li.selected {
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+}
+
+.system-name, .scenario-name, .result-name {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  color: #444;
+}
+
+.delete-button, .run-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.delete-button:hover {
+  background-color: #f8d7da;
+  color: #dc3545;
+  opacity: 1;
+}
+
+.run-button {
+  margin-right: 8px;
+}
+
+.run-button:hover {
+  background-color: #d4edda;
+  color: #28a745;
+  opacity: 1;
+}
+
+.scenario-actions {
+  display: flex;
+}
+
+.empty-list {
+  padding: 30px 20px;
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.empty-list::before {
+  content: '📋';
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+
+.system-detail, .scenario-detail, .result-detail {
+  flex-grow: 1;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  overflow: auto;
+  transition: all 0.3s ease;
+}
+
+.system-form, .scenario-form, .result-analysis {
+  padding: 24px;
+}
+
+.system-form h3, .scenario-form h3, .result-analysis h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #343a40;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.no-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #6c757d;
+  font-style: italic;
+  padding: 30px;
+  text-align: center;
+}
+
+.no-selection::before {
+  content: '👆';
+  font-size: 3rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+/* 表单元素样式 */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: #f8f9fa;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  background-color: white;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* 状态消息样式 */
+.status-message {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-message.success {
+  background-color: #10b981;
+}
+
+.status-message.error {
+  background-color: #ef4444;
+}
+
+.status-message.info {
+  background-color: #3b82f6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}
+
+/* 响应式布局 */
+@media (max-width: 1200px) {
+  .system-list, .scenario-list, .result-list {
+    flex: 0 0 250px;
+  }
+  
+  .tutorial-section {
+    width: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .economic-pressure-test-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+  }
+  
+  .economic-pressure-test-title {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+  
+  .economic-pressure-test-tabs {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .economic-pressure-test-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .system-editor, .simulation-panel, .results-viewer {
+    flex-direction: column;
+  }
+  
+  .system-list, .scenario-list, .result-list {
+    flex: 0 0 auto;
+    width: 100%;
+    max-height: 300px;
+    margin-bottom: 16px;
+  }
+  
+  .tutorial-section {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .economic-pressure-test-content {
+    padding: 12px;
+  }
+  
+  .tutorial-section {
+    width: 260px;
+  }
+  
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 8px 12px;
+  }
+  
+  .system-form, .scenario-form, .result-analysis {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .economic-pressure-test-tabs .tab-button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: #ffffff !important;
+  }
+  
+  .action-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .tutorial-section {
+    width: 240px;
+  }
+  
+  .tutorial-content {
+    padding: 15px;
+  }
+  
+  .tutorial-content h4 {
+    font-size: 1rem;
+  }
+  
+  .tutorial-content li {
+    font-size: 0.9rem;
+  }
+  
+  .tutorial-tips {
+    font-size: 0.85rem;
+  }
+}
+
+/* 弹出式教程样式 */
+.economic-tutorial-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.economic-tutorial-content {
+  width: 700px;
+  max-width: 90%;
+  max-height: 80vh;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.economic-tutorial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.economic-tutorial-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.economic-tutorial-close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.economic-tutorial-close:hover {
+  color: #0f172a;
+  background-color: #f1f5f9;
+}
+
+.economic-tutorial-sections {
+  padding: 0;
+  overflow-y: auto;
+  max-height: calc(80vh - 80px);
+}
+
+.economic-tutorial-section {
+  padding: 24px;
+}
+
+.economic-tutorial-section h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #0f172a;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.economic-tutorial-section ol {
+  padding-left: 24px;
+  margin-bottom: 24px;
+  counter-reset: item;
+}
+
+.economic-tutorial-section li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #334155;
+  position: relative;
+  padding-left: 8px;
+}
+
+.economic-tutorial-section li::marker {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.economic-tutorial-section strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.economic-tutorial-tips {
+  background-color: #f0f9ff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  margin-top: 24px;
+  border-left: 4px solid #3b82f6;
+  color: #0c4a6e;
+}
+
+.economic-tutorial-tips strong {
+  color: #0369a1;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .economic-tutorial-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .economic-tutorial-section {
+    padding: 20px;
+  }
+  
+  .economic-tutorial-header {
+    padding: 16px 20px;
+  }
+  
+  .economic-tutorial-header h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* 当教程显示时，内容区域的样式 */
+.economic-pressure-test-content.with-tutorial {
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .economic-tutorial-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .economic-tutorial-section {
+    max-height: calc(90vh - 60px);
+  }
+}
+
+.simulation-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.simulation-config {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.simulation-config h4 {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.simulation-config p {
+  margin: 0 0 16px 0;
+  color: #64748b;
+}
+
+.simulation-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.action-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 8px;
+}
+
+.action-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} 

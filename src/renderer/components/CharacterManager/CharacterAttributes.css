@@ -1,0 +1,95 @@
+.character-attributes {
+  padding: 20px;
+}
+
+.attributes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.attribute-item {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.attribute-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.attribute-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.attribute-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-button {
+  min-width: 28px;
+  height: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background: white;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.control-button:hover {
+  background: #e6f7ff;
+  border-color: #1890ff;
+}
+
+.attribute-value {
+  min-width: 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1890ff;
+  background: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+}
+
+.attribute-bar-container {
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.attribute-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #1890ff, #69c0ff);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.attribute-delete-btn {
+  color: #ff4d4f;
+}
+
+.attribute-delete-btn:hover {
+  color: #ff7875;
+  background: #fff1f0;
+}
+
+.ant-tabs-wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

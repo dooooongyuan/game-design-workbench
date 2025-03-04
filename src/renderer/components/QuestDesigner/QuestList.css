@@ -1,0 +1,102 @@
+.quest-list-container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.quest-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.quest-list-header h2 {
+  margin: 0;
+  color: #1f1f1f;
+}
+
+.quest-list-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.quest-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.quest-list .ant-list-item {
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.quest-list .ant-list-item:hover {
+  background: #f6f6f6;
+  border-color: #e6e6e6;
+}
+
+.quest-list .ant-list-item-meta-title {
+  margin-bottom: 8px;
+}
+
+.quest-list .ant-list-item-meta-title a {
+  color: #1890ff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.quest-list .ant-list-item-meta-description p {
+  margin-bottom: 8px;
+  color: #595959;
+}
+
+.quest-meta-info {
+  color: #8c8c8c;
+  font-size: 12px;
+}
+
+.quest-list .ant-list-item-action {
+  margin-top: 12px;
+}
+
+.quest-list .ant-empty {
+  margin: 32px 0;
+}
+
+.ant-modal-body .ant-form-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 搜索框样式修复 */
+.quest-list-container .ant-input-search {
+  display: flex;
+  align-items: stretch;
+}
+
+.quest-list-container .ant-input-search .ant-input-affix-wrapper {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.quest-list-container .ant-input-search .ant-input-search-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0 15px;
+  line-height: 32px;
+}

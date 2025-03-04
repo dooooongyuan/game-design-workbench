@@ -1,0 +1,382 @@
+.quest-designer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.quest-designer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #e8e8e8;
+  height: 60px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left h2 {
+  margin: 0 0 0 16px;
+  font-size: 18px;
+  color: #333;
+}
+
+.quest-info {
+  display: flex;
+  align-items: center;
+}
+
+.quest-name-input {
+  margin-right: 12px;
+  padding: 4px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 250px;
+  height: 32px;
+  line-height: 32px;
+  transition: all 0.3s;
+}
+
+.quest-name-input:hover,
+.quest-name-input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.save-button,
+.clear-cache-button {
+  margin-left: 8px;
+}
+
+.debug-mode-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.debug-mode-toggle span {
+  margin-right: 8px;
+  font-size: 14px;
+  color: #666;
+}
+.quest-name-input:hover {
+  border-color: #40a9ff;
+}
+
+.quest-name-input:focus {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  outline: none;
+}
+
+.save-button {
+  padding: 0 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+.clear-cache-button {
+  padding: 0 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  margin-left: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+}
+
+.clear-cache-button:hover {
+  background-color: #d32f2f;
+}
+
+.quest-designer-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.node-editor-container {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.side-panel {
+  width: 300px;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.node-panel {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.node-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.node-buttons button {
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.node-buttons button:hover {
+  background-color: #f0f0f0;
+  border-color: #999;
+}
+
+/* 节点类型按钮样式 */
+.node-buttons button:nth-child(1) {
+  border-color: #4CAF50;
+  color: #2E7D32;
+}
+
+.node-buttons button:nth-child(2) {
+  border-color: #2196F3;
+  color: #1565C0;
+}
+
+.node-buttons button:nth-child(3) {
+  border-color: #FF9800;
+  color: #EF6C00;
+}
+
+.node-buttons button:nth-child(4) {
+  border-color: #9C27B0;
+  color: #7B1FA2;
+}
+
+.node-buttons button:nth-child(5) {
+  border-color: #FFC107;
+  color: #FF8F00;
+}
+
+.node-buttons button:nth-child(6) {
+  border-color: #F44336;
+  color: #C62828;
+}
+
+/* 测试流程按钮样式 */
+.test-flow-button {
+  background-color: #673AB7 !important;
+  color: white !important;
+  border-color: #512DA8 !important;
+  font-weight: bold !important;
+}
+
+.test-flow-button:hover {
+  background-color: #5E35B1 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 错误边界样式 */
+.error-boundary {
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #f5222d;
+  border-radius: 4px;
+  background-color: #fff1f0;
+  text-align: center;
+}
+
+.error-boundary h2 {
+  color: #f5222d;
+  margin-bottom: 15px;
+}
+
+.error-boundary details {
+  text-align: left;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+}
+
+.error-boundary button {
+  padding: 8px 16px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.error-boundary button:hover {
+  background-color: #40a9ff;
+}
+
+/* 调试模式相关样式 */
+.debug-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 16px;
+  height: 32px;
+  line-height: 32px;
+}
+
+.debug-mode-toggle span {
+  margin-right: 8px;
+  font-size: 14px;
+  color: #666;
+}
+.debug-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #444;
+}
+
+.debug-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #333;
+  border-bottom: 1px solid #444;
+}
+
+.debug-panel-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+.clear-debug-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.clear-debug-button:hover {
+  background-color: #d32f2f;
+}
+
+.debug-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.debug-panel-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.debug-panel-content li {
+  margin-bottom: 5px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+/* 添加导航标签左内边距 */
+.side-panel .ant-tabs-nav {
+  padding-left: 20px;
+}
+
+.test-progress-container {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 16px;
+}
+.test-step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.test-step.processing {
+  background-color: #e6f7ff;
+  border-left: 4px solid #1890ff;
+}
+
+.test-step.success {
+  background-color: #f6ffed;
+  border-left: 4px solid #52c41a;
+}
+
+.test-step.error {
+  background-color: #fff1f0;
+  border-left: 4px solid #ff4d4f;
+}
+
+.step-icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-type {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.step-message {
+  color: #666;
+  font-size: 14px;
+}

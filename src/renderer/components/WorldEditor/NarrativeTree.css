@@ -1,0 +1,412 @@
+.narrative-tree-container {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  overflow: auto;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* 树形图连接线样式 */
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+  transition: all 0.3s ease;
+  cursor: col-resize;
+}
+
+.link:hover {
+  stroke: #1890ff;
+  stroke-width: 3px;
+  filter: drop-shadow(0 0 3px rgba(24, 144, 255, 0.5));
+}
+
+/* 添加连接线拖拽状态 */
+.link-hover {
+  stroke: #1890ff;
+  stroke-width: 3px;
+  stroke-dasharray: 5, 3;
+  animation: link-dash 10s linear infinite;
+}
+
+.link-dragging {
+  stroke: #722ed1;
+  stroke-width: 4px;
+  filter: drop-shadow(0 0 5px rgba(114, 46, 209, 0.6));
+}
+
+@keyframes link-dash {
+  to {
+    stroke-dashoffset: -50;
+  }
+}
+
+/* 添加连接线调整提示 */
+.narrative-tree-container::after {
+  content: "提示: 拖动连接线可调整节点间距";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.narrative-tree-container:hover::after {
+  opacity: 1;
+}
+
+/* 节点样式 */
+.node circle {
+  fill: #fff;
+  stroke-width: 2.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* 优化普通节点样式 */
+.node.normal circle {
+  stroke: #1890ff;
+  stroke-width: 3px;
+  r: 10px;
+  fill: rgba(24, 144, 255, 0.05);
+  filter: drop-shadow(0 0 3px rgba(24, 144, 255, 0.3));
+  animation: normal-pulse 3s ease-in-out infinite;
+}
+
+@keyframes normal-pulse {
+  0% {
+    stroke-width: 3px;
+    filter: drop-shadow(0 0 3px rgba(24, 144, 255, 0.3));
+  }
+  50% {
+    stroke-width: 3.5px;
+    filter: drop-shadow(0 0 4px rgba(24, 144, 255, 0.4));
+  }
+  100% {
+    stroke-width: 3px;
+    filter: drop-shadow(0 0 3px rgba(24, 144, 255, 0.3));
+  }
+}
+
+.node.normal:hover circle {
+  fill: rgba(24, 144, 255, 0.15);
+  filter: drop-shadow(0 0 5px rgba(24, 144, 255, 0.5));
+  transform: scale(1.05);
+}
+
+.node.normal text {
+  font-weight: 500;
+  fill: #0050b3;
+}
+
+.node.normal .node-weight {
+  font-size: 11px;
+  font-weight: bold;
+  fill: #1890ff;
+  text-shadow: 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.node.condition circle {
+  stroke: #faad14;
+  stroke-dasharray: 5, 2;
+  r: 10;
+}
+
+/* 事件节点样式优化 */
+.node.event circle {
+  stroke: #52c41a;
+  stroke-width: 3px;
+  r: 12px;
+  fill: rgba(82, 196, 26, 0.1);
+  filter: drop-shadow(0 0 4px rgba(82, 196, 26, 0.4));
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.node.event:hover circle {
+  fill: rgba(82, 196, 26, 0.2);
+  filter: drop-shadow(0 0 6px rgba(82, 196, 26, 0.6));
+}
+
+.node.event text {
+  font-weight: 500;
+  fill: #389e0d;
+}
+
+.node.event .node-weight {
+  font-size: 11px;
+  font-weight: bold;
+  fill: #52c41a;
+  text-shadow: 0 0 3px rgba(82, 196, 26, 0.3);
+}
+
+.node.event .event-id {
+  font-size: 10px;
+  fill: #389e0d;
+  opacity: 0.8;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.node:hover circle {
+  fill: #e6f7ff;
+  stroke-width: 3px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  cursor: pointer;
+}
+
+/* 优化节点类型样式 */
+.node.condition circle {
+  stroke: #faad14;
+  stroke-width: 3px;
+  stroke-dasharray: 5, 3;
+  animation: dash 15s linear infinite;
+  r: 12px;
+  fill: rgba(250, 173, 20, 0.1);
+  filter: drop-shadow(0 0 3px rgba(250, 173, 20, 0.3));
+}
+
+.node.condition:hover circle {
+  fill: rgba(250, 173, 20, 0.2);
+  filter: drop-shadow(0 0 5px rgba(250, 173, 20, 0.5));
+}
+
+.node.condition text {
+  font-weight: 500;
+  fill: #d48806;
+}
+
+.node.condition .node-weight {
+  font-size: 11px;
+  font-weight: bold;
+  fill: #faad14;
+  text-shadow: 0 0 3px rgba(250, 173, 20, 0.3);
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -50;
+  }
+}
+
+.node.event circle {
+  stroke: #52c41a;
+  stroke-width: 3px;
+}
+
+/* 增强工具提示样式 */
+.tree-tooltip {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  transform-origin: top center;
+  animation: tooltip-appear 0.2s ease;
+}
+
+@keyframes tooltip-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 优化节点文本样式 */
+.node text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  fill: #333;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.node:hover text {
+  fill: #1890ff;
+  font-weight: 500;
+}
+
+/* 添加节点权重指示器 */
+.node-weight {
+  font-size: 12px;
+  fill: #666;
+  text-anchor: middle;
+  dominant-baseline: central;
+  margin-top: -10px;
+}
+
+/* 优化树形图容器 */
+.narrative-tree-container {
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+  border-radius: 8px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 节点编辑弹窗样式 */
+.node-edit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.node-edit-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.node-edit-content h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.edit-form .form-group {
+  margin-bottom: 15px;
+}
+
+.edit-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.edit-form select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.edit-actions button {
+  padding: 6px 15px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.edit-actions button:first-child {
+  background-color: #1890ff;
+  color: white;
+}
+
+.edit-actions button:first-child:hover {
+  background-color: #40a9ff;
+}
+
+.edit-actions button:last-child {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.edit-actions button:last-child:hover {
+  background-color: #d9d9d9;
+}
+
+/* 添加普通节点激活状态样式 */
+.node.normal.active circle {
+  stroke: #096dd9;
+  stroke-width: 4px;
+  r: 12px;
+  fill: rgba(24, 144, 255, 0.2);
+  filter: drop-shadow(0 0 6px rgba(24, 144, 255, 0.6));
+  animation: normal-active-pulse 2s ease-in-out infinite;
+}
+
+@keyframes normal-active-pulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(24, 144, 255, 0.6));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px rgba(24, 144, 255, 0.7));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(24, 144, 255, 0.6));
+  }
+}
+
+.node.normal.active text {
+  font-weight: 600;
+  fill: #0050b3;
+  letter-spacing: 0.8px;
+}
+
+/* 添加拖动提示样式 */
+.drag-tooltip {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  color: white !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  border-left: 3px solid #1890ff !important;
+  animation: tooltip-appear 0.2s ease !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
+
+.drag-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}

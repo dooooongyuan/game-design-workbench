@@ -1,0 +1,330 @@
+.two-d-layout-editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.grid-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.view-controls button {
+  padding: 4px 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-controls button:hover {
+  background-color: #f0f0f0;
+}
+
+.editor-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.editor-canvas {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  cursor: grab;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout paint size;
+}
+
+.editor-canvas:active {
+  cursor: grabbing;
+}
+
+.grid-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#ddd 1px, transparent 1px),
+                    linear-gradient(90deg, #ddd 1px, transparent 1px);
+  background-position: 0 0, 0 0;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout paint;
+  pointer-events: auto;
+  transition: background-color 0.2s ease;
+}
+
+.grid-container.drag-over {
+  background-color: rgba(66, 133, 244, 0.15) !important;
+  box-shadow: inset 0 0 0 3px rgba(66, 133, 244, 0.8) !important;
+  transition: all 0.2s ease;
+}
+
+.grid-object {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: move;
+  user-select: none;
+  z-index: 10;
+  transition: box-shadow 0.2s ease;
+  will-change: transform, left, top, width, height;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout paint size;
+}
+
+.grid-object:hover {
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.5);
+}
+
+.grid-object.selected {
+  z-index: 20;
+  box-shadow: 0 0 0 2px #4285f4, 0 0 8px rgba(66, 133, 244, 0.6);
+}
+
+.object-label {
+  color: white;
+  font-size: 12px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  font-weight: bold;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid #00f;
+  z-index: 30;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.resize-handle:hover {
+  background-color: #4285f4;
+  border-color: white;
+  transform: scale(1.2);
+}
+
+.resize-handle.n {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: n-resize;
+}
+
+.resize-handle.e {
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  cursor: e-resize;
+}
+
+.resize-handle.s {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: s-resize;
+}
+
+.resize-handle.w {
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+  cursor: w-resize;
+}
+
+.resize-handle.ne {
+  top: -5px;
+  right: -5px;
+  cursor: ne-resize;
+}
+
+.resize-handle.nw {
+  top: -5px;
+  left: -5px;
+  cursor: nw-resize;
+}
+
+.resize-handle.se {
+  bottom: -5px;
+  right: -5px;
+  cursor: se-resize;
+}
+
+.resize-handle.sw {
+  bottom: -5px;
+  left: -5px;
+  cursor: sw-resize;
+}
+
+.resize-handle.n:hover, .resize-handle.s:hover {
+  height: 12px;
+}
+
+.resize-handle.e:hover, .resize-handle.w:hover {
+  width: 12px;
+}
+
+.property-editor {
+  width: 250px;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.property-editor h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.property-group {
+  margin-bottom: 12px;
+}
+
+.property-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #555;
+}
+
+.property-group input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-delete {
+  margin-top: 16px;
+  padding: 8px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+.rotation-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rotation-control input[type="range"] {
+  flex: 1;
+}
+
+.rotation-control input[type="number"] {
+  width: 60px;
+}
+
+.object-properties-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+/* 调试面板样式 */
+.debug-panel {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 400px;
+  max-height: 300px;
+  background-color: rgba(20, 20, 20, 0.9);
+  border: 1px solid #666;
+  border-radius: 4px;
+  padding: 8px;
+  color: #fff;
+  font-size: 12px;
+  overflow: auto;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  contain: content;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.debug-panel h4 {
+  margin: 4px 0;
+  color: #aaddff;
+  border-bottom: 1px solid #555;
+  padding-bottom: 4px;
+}
+
+.debug-panel pre {
+  margin: 4px 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.debug-objects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+.debug-objects-table th,
+.debug-objects-table td {
+  border: 1px solid #444;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.debug-objects-table th {
+  background-color: #333;
+  color: #ddd;
+}
+
+.debug-objects-table tr:hover {
+  background-color: #333;
+}
+
+.debug-objects-table tr.selected {
+  background-color: rgba(66, 135, 245, 0.3);
+}
+
+/* 添加拖放时的样式 */
+.drag-over {
+  background-color: rgba(66, 133, 244, 0.1);
+}
+
+/* 优化拖放时的性能 */
+.dragging * {
+  pointer-events: none !important;
+} 

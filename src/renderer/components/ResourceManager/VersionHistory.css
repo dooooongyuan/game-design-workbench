@@ -1,0 +1,235 @@
+.version-history {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.no-versions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  color: #7f8c8d;
+  font-size: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.versions-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.version-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #95a5a6;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.version-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.version-item.selected {
+  border-left-color: #3498db;
+  background-color: #e8f4fc;
+}
+
+.version-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.version-number {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.version-date {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.version-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.version-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 150px;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.info-value {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.info-value.diff {
+  font-weight: 500;
+}
+
+.info-value.diff:not(:empty)::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.info-value.diff:not(:empty)[data-diff="positive"]::before {
+  background-color: #2ecc71;
+}
+
+.info-value.diff:not(:empty)[data-diff="negative"]::before {
+  background-color: #e74c3c;
+}
+
+.version-changelog {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.changelog-label {
+  font-weight: 600;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.changelog-content {
+  color: #333;
+  font-size: 0.9rem;
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+.version-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.switch-button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.switch-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.download-button {
+  padding: 8px 16px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  background-color: #27ae60;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .version-body {
+    padding: 16px;
+  }
+  
+  .version-info {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .version-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+  
+  .version-body {
+    padding: 12px 16px;
+    gap: 16px;
+  }
+  
+  .version-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .info-row {
+    width: 100%;
+  }
+  
+  .version-actions {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+  
+  .switch-button,
+  .download-button {
+    width: 100%;
+    text-align: center;
+  }
+} 

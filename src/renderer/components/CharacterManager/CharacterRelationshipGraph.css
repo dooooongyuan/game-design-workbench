@@ -1,0 +1,225 @@
+/* 关系图谱容器样式 */
+.relationship-graph-container {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* 节点样式 */
+.node circle {
+  stroke-width: 2px;
+  stroke: #fff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.node.selected circle {
+  stroke-width: 3px;
+  stroke: #ffcc00;
+  filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.6));
+}
+
+/* 节点文本样式 */
+.node text {
+  font-family: 'Arial', sans-serif;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), 
+               0 -1px 2px rgba(255, 255, 255, 0.8), 
+               1px 0 2px rgba(255, 255, 255, 0.8), 
+               -1px 0 2px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+/* 角色名称文本 */
+.node text:first-of-type {
+  font-size: 14px;
+  fill: #333;
+  font-weight: bold;
+}
+
+/* 角色类型文本 */
+.node text:nth-of-type(2) {
+  font-size: 11px;
+  font-weight: normal;
+}
+
+/* 图谱错误提示样式 */
+.graph-error {
+  text-align: center;
+  padding: 20px;
+  color: #ff4d4f;
+  background: #fff1f0;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.graph-error button {
+  margin-top: 10px;
+  padding: 4px 15px;
+  background: #fff;
+  border: 1px solid #ff4d4f;
+  border-radius: 4px;
+  color: #ff4d4f;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.graph-error button:hover {
+  background: #fff1f0;
+}
+
+.graph-error-fallback {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 14px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+/* 无数据提示样式 */
+.no-data-message {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 14px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+/* 图谱区域样式 */
+.relationship-graph-section {
+  margin-bottom: 20px;
+}
+
+.relationship-graph-section h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+  border-left: 3px solid #1890ff;
+  padding-left: 10px;
+}
+
+/* 关系列表区域样式 */
+.relationship-list-section {
+  margin-top: 20px;
+}
+
+.relationship-list-section h3 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+  border-left: 3px solid #1890ff;
+  padding-left: 10px;
+}
+
+/* 关系项样式 */
+.relationship-item {
+  background: #fff;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.relationship-item:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.relationship-item h4 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+}
+
+.relationship-item h4 span {
+  color: #1890ff;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.relationship-item p {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+}
+
+/* 图谱容器响应式样式 */
+@media (max-width: 1200px) {
+  .relationship-graph-container {
+    padding: 10px;
+  }
+}
+
+.relationship-graph-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.relationship-graph-tooltip {
+  position: absolute;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* 连接线样式 */
+.link {
+  stroke-width: 1.5px;
+  stroke-opacity: 0.6;
+  fill: none;
+}
+
+/* 关系线文本样式 */
+.link-text-group {
+  pointer-events: none;
+}
+
+.link-text-bg {
+  fill: rgba(255, 255, 255, 0.95);
+  stroke-width: 1;
+  filter: drop-shadow(0px 1px 3px rgba(0,0,0,0.2));
+}
+
+.link-text {
+  font-size: 12px;
+  font-weight: 500;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  letter-spacing: 0.5px;
+}
+
+/* 连接线标签样式 */
+.link-label {
+  font-family: 'Arial', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2px 4px;
+  border-radius: 3px;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+/* 工具提示样式 */
+.tree-tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  pointer-events: none;
+  z-index: 1000;
+  max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  line-height: 1.6;
+  backdrop-filter: blur(8px);
+}

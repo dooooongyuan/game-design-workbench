@@ -1,0 +1,634 @@
+.balance-simulator {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f5f7fa;
+}
+
+.balance-simulator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.balance-simulator-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.balance-simulator-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.tab-button {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.tab-button:hover {
+  background-color: #f0f0f0;
+}
+
+.tab-button.active {
+  background-color: #4a90e2;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.balance-simulator-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-button {
+  padding: 6px 12px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-button:hover {
+  background-color: #e0e0e0;
+}
+
+.action-button.primary {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.action-button.primary:hover {
+  background-color: #3a7bc8;
+}
+
+.balance-simulator-body {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  min-height: 80vh;
+}
+
+/* 教程面板样式 */
+.tutorial-panel {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  padding: 0;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 900px;
+}
+
+.tutorial-panel.full-width {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  left: 0;
+  right: 0;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  border: 1px solid #d0d9e6;
+  min-height: 600px;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.tutorial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 30px;
+  background-color: #e0e7f1;
+  border-bottom: 1px solid #c0cde0;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px 10px 0 0;
+}
+
+.tutorial-panel h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #2c3e50;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.tutorial-panel h3::before {
+  content: "📚";
+  margin-right: 12px;
+  font-size: 1.5rem;
+}
+
+.tutorial-toggle {
+  background: none;
+  border: 1px solid rgba(90, 109, 133, 0.2);
+  color: #5a6d85;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.tutorial-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #2c3e50;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-sections {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  align-items: stretch;
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+.tutorial-section {
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.tutorial-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* 确保最后一个教程卡片没有底部边距 */
+.tutorial-section:last-child {
+  margin-bottom: 0;
+}
+
+/* 为不同的教程卡片添加不同的左侧边框颜色 */
+.tutorial-section:nth-child(1) {
+  border-left: 5px solid #4285f4;
+}
+
+.tutorial-section:nth-child(2) {
+  border-left: 5px solid #34a853;
+}
+
+.tutorial-section:nth-child(3) {
+  border-left: 5px solid #fbbc05;
+}
+
+.tutorial-content {
+  padding: 25px;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+  border-top: 1px solid #eee;
+  position: relative;
+  min-height: 200px;
+}
+
+.tutorial-content h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 12px;
+  padding-left: 32px;
+  position: relative;
+  background-color: #f8f9fa;
+  padding-top: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 为不同的教程卡片添加不同的图标 */
+.tutorial-section:nth-child(1) .tutorial-content h4::before {
+  content: "✏️";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.3rem;
+}
+
+.tutorial-section:nth-child(2) .tutorial-content h4::before {
+  content: "🔄";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.3rem;
+}
+
+.tutorial-section:nth-child(3) .tutorial-content h4::before {
+  content: "📊";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.3rem;
+}
+
+.tutorial-content ol,
+.tutorial-content ul {
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+.tutorial-content li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.tutorial-content ul li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.tutorial-content li::marker {
+  color: #4285f4;
+  font-weight: bold;
+}
+
+.tutorial-section:nth-child(2) .tutorial-content li::marker {
+  color: #34a853;
+}
+
+.tutorial-section:nth-child(3) .tutorial-content li::marker {
+  color: #fbbc05;
+}
+
+.tutorial-content code {
+  background-color: #f5f5f5;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #e83e8c;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.tutorial-content strong {
+  color: #4285f4;
+  font-weight: 600;
+  background-color: rgba(66, 133, 244, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.tutorial-section:nth-child(2) .tutorial-content strong {
+  color: #34a853;
+  background-color: rgba(52, 168, 83, 0.1);
+}
+
+.tutorial-section:nth-child(3) .tutorial-content strong {
+  color: #fbbc05;
+  background-color: rgba(251, 188, 5, 0.1);
+}
+
+.tutorial-tips {
+  background-color: #f8f9fa;
+  border-left: 4px solid #4dabf7;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #495057;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.tutorial-section:nth-child(2) .tutorial-tips {
+  border-left-color: #40c057;
+}
+
+.tutorial-section:nth-child(3) .tutorial-tips {
+  border-left-color: #fd7e14;
+}
+
+.tutorial-tips::before {
+  content: "💡";
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.tutorial-tips strong {
+  color: #212529;
+  font-weight: 600;
+}
+
+/* 添加滚动条样式 */
+.tutorial-sections::-webkit-scrollbar {
+  width: 10px;
+}
+
+.tutorial-sections::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.tutorial-sections::-webkit-scrollbar-thumb {
+  background: #c1c9d6;
+  border-radius: 5px;
+}
+
+.tutorial-sections::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* 移除垂直滚动提示 */
+.tutorial-panel::after {
+  display: none;
+}
+
+/* 移除水平滚动提示 */
+.tutorial-sections::before {
+  display: none;
+}
+
+.tutorial-sections::after {
+  content: "↓ 滚动查看更多 ↓";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #6c757d;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  z-index: 10;
+  animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+
+.balance-simulator-content {
+  height: 100%;
+  min-height: 500px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+}
+
+.status-message {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+  z-index: 1000;
+}
+
+.status-message.success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.status-message.error {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.status-message.info {
+  background-color: #3498db;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(10px); }
+}
+
+.import-export-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 500px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 16px;
+}
+
+.modal-footer {
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal-textarea {
+  width: 100%;
+  height: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 14px;
+  resize: none;
+}
+
+.modal-textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.modal-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-button.cancel {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.modal-button.cancel:hover {
+  background-color: #e0e0e0;
+}
+
+.modal-button.confirm {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.modal-button.confirm:hover {
+  background-color: #3a7bc8;
+}
+
+/* 新的标签页按钮样式 */
+.balance-tab-button {
+  padding: 10px 18px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 6px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.balance-tab-button:hover {
+  background-color: #eaeaea;
+  color: #333;
+}
+
+.balance-tab-button.active {
+  background-color: #2c7be5;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.balance-tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  opacity: 0.7;
+}
+
+/* 为教程内容区域添加自定义滚动条 */
+.tutorial-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.tutorial-content::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.tutorial-content::-webkit-scrollbar-thumb {
+  background: #c1c9d6;
+  border-radius: 4px;
+}
+
+.tutorial-content::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* 移除滚动提示 */
+.tutorial-content::after {
+  display: none;
+} 

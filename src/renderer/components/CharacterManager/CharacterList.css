@@ -1,0 +1,313 @@
+/* 优化角色列表侧边栏 */
+.character-list-sidebar {
+  width: 280px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.03);
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 15px;
+}
+
+.sidebar-header h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* 优化角色列表 */
+.character-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 5px;
+  max-height: calc(100vh - 220px);
+  scrollbar-width: thin;
+}
+
+.character-item {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.character-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  border-color: #d0d0d0;
+}
+
+.character-item.active {
+  background-color: #e6f7ff;
+  border-color: #1890ff;
+  box-shadow: 0 2px 8px rgba(24,144,255,0.2);
+}
+
+.character-item-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 14px;
+  flex-shrink: 0;
+  border: 2px solid #f0f0f0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.character-item.active .character-item-avatar {
+  border-color: #1890ff;
+}
+
+.character-item-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character-item-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.character-item h3 {
+  margin: 0 0 6px 0;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.character-item p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete-character-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #bbb;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 8px;
+  opacity: 0;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-item:hover .delete-character-button {
+  opacity: 1;
+}
+
+.delete-character-button:hover {
+  color: #ff4d4f;
+  background-color: rgba(255, 77, 79, 0.1);
+}
+
+/* 优化添加角色按钮 */
+.add-character-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: auto;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(24,144,255,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.add-character-button:hover {
+  background-color: #40a9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(24,144,255,0.4);
+}
+
+.add-character-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 3px rgba(24,144,255,0.3);
+}
+
+.add-character-button::before {
+  content: "+";
+  margin-right: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 优化添加角色表单 */
+.add-character-form {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 18px;
+  margin-top: auto;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.add-character-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.add-character-form input:focus {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24,144,255,0.2);
+  outline: none;
+}
+
+.add-character-form input::placeholder {
+  color: #bbb;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.form-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.form-actions button:first-child {
+  background-color: #1890ff;
+  color: white;
+  flex: 1;
+  margin-right: 8px;
+}
+
+.form-actions button:first-child:hover {
+  background-color: #40a9ff;
+  box-shadow: 0 2px 5px rgba(24,144,255,0.3);
+}
+
+.form-actions button:last-child {
+  background-color: #f5f5f5;
+  color: #666;
+  flex: 1;
+}
+
+.form-actions button:last-child:hover {
+  background-color: #e8e8e8;
+  color: #333;
+}
+
+/* 优化底部按钮 */
+.sidebar-footer {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 确保CharacterDataIO组件在侧边栏中正确显示 */
+.sidebar-footer .character-data-io {
+  margin-top: 0;
+}
+
+.sidebar-footer .data-io-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-footer .export-button,
+.sidebar-footer .import-button {
+  width: 100% !important;
+  height: 48px !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+  margin-bottom: 5px !important;
+}
+
+.sidebar-footer .export-button {
+  background-color: #1890ff !important;
+  border: 1px solid #1890ff !important;
+  color: white !important;
+}
+
+.sidebar-footer .export-button:hover {
+  background-color: #40a9ff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(24, 144, 255, 0.3) !important;
+}
+
+.sidebar-footer .import-button {
+  background-color: white !important;
+  border: 1px solid #d9d9d9 !important;
+  color: #666 !important;
+}
+
+.sidebar-footer .import-button:hover {
+  border-color: #1890ff !important;
+  color: #1890ff !important;
+  background-color: #f0f7ff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(24, 144, 255, 0.15) !important;
+}
+
+.sidebar-footer .ant-upload {
+  width: 100% !important;
+  display: block !important;
+}
+
+.sidebar-footer .ant-upload button {
+  width: 100% !important;
+} 

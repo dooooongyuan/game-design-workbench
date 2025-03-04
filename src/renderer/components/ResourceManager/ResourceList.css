@@ -1,0 +1,375 @@
+.resource-list-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.resource-list-filters {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.search-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 15px;
+  padding-right: 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-box input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.clear-search {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.clear-search:hover {
+  color: #e74c3c;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.filter-section select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.filter-section select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #e1f0fa;
+  color: #3498db;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.tag:hover {
+  background-color: #d0e6f7;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tag.selected {
+  background-color: #3498db;
+  color: white;
+}
+
+.resource-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.no-resources {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #7f8c8d;
+  padding: 20px;
+}
+
+.no-resources p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.no-resources p:first-child {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.resource-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.resource-table th {
+  background-color: #f8f9fa;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+  border-bottom: 2px solid #eee;
+  font-size: 0.9rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.resource-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+
+.resource-table tr {
+  transition: all 0.2s ease;
+}
+
+.resource-table tr:hover {
+  background-color: #f5f9fc;
+}
+
+.resource-table tr.selected {
+  background-color: #e8f4fc;
+}
+
+/* 列宽调整 */
+.column-type {
+  width: 60px;
+}
+
+.column-name {
+  width: 20%;
+}
+
+.column-size {
+  width: 100px;
+}
+
+.column-info-group {
+  width: auto;
+}
+
+.column-actions {
+  width: 160px;
+  text-align: center;
+}
+
+/* 信息组样式 */
+.info-header-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.info-header-item {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.info-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.info-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resource-type {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.resource-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.resource-size {
+  color: #7f8c8d;
+  white-space: nowrap;
+}
+
+.resource-versions {
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.version-badge {
+  display: inline-block;
+  min-width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background-color: #3498db;
+  color: white;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+.resource-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.resource-tags .tag {
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  border-radius: 12px;
+}
+
+.resource-date {
+  color: #7f8c8d;
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+
+.resource-actions {
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.resource-actions .action-button {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  margin-left: 0;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.resource-actions .action-button.view {
+  background-color: #3498db;
+}
+
+.resource-actions .action-button.view:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+.resource-actions .action-button.delete {
+  background-color: #e74c3c;
+}
+
+.resource-actions .action-button.delete:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .info-group {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .info-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .resource-tags {
+    justify-content: flex-start;
+  }
+  
+  .resource-date {
+    justify-content: flex-start;
+  }
+  
+  .info-header-group {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .column-size,
+  .resource-size {
+    display: none;
+  }
+  
+  .resource-list-filters {
+    padding: 15px;
+  }
+  
+  .search-box input,
+  .filter-section select {
+    padding: 10px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .resource-actions .action-button {
+    width: 100%;
+  }
+} 

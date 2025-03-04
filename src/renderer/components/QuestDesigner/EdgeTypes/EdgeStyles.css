@@ -1,0 +1,60 @@
+/* 自定义边样式 */
+.custom-edge {
+  stroke: #888;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: none;
+  transition: stroke 0.3s, stroke-width 0.3s;
+}
+
+/* 选中状态 */
+.custom-edge.selected {
+  stroke: #555;
+  stroke-width: 3;
+}
+
+/* 成功路径 */
+.custom-edge.success {
+  stroke: #4CAF50;
+  stroke-width: 2;
+}
+
+/* 失败路径 */
+.custom-edge.failure {
+  stroke: #F44336;
+  stroke-width: 2;
+  stroke-dasharray: 5, 5;
+}
+
+/* 边标签样式 */
+.edge-label {
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+  pointer-events: all;
+  cursor: pointer;
+  max-width: 150px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.edge-label:hover {
+  transform: scale(1.05) translate(-50%, -50%) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.edge-label-text {
+  font-weight: bold;
+  color: #555;
+}
+
+.edge-condition {
+  font-size: 10px;
+  color: #777;
+  margin-top: 2px;
+  word-break: break-word;
+} 

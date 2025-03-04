@@ -1,0 +1,127 @@
+.markdown-preview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.preview-header {
+  display: none;
+}
+
+.preview-content {
+  flex: 1;
+  padding: 0;
+  overflow-y: auto;
+  transition: opacity 0.2s ease;
+}
+
+/* Markdown 内容样式 */
+.preview-content h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #eee;
+}
+
+.preview-content h2 {
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #eee;
+}
+
+.preview-content h3 {
+  font-size: 1.25em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.preview-content p {
+  margin: 1em 0;
+  line-height: 1.6;
+}
+
+.preview-content ul, 
+.preview-content ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.preview-content li {
+  margin: 0.5em 0;
+}
+
+.preview-content code {
+  background-color: #f5f5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.preview-content pre {
+  background-color: #f5f5f5;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.preview-content blockquote {
+  margin: 1em 0;
+  padding-left: 1em;
+  border-left: 4px solid #ddd;
+  color: #666;
+}
+
+.preview-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.preview-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.preview-content th,
+.preview-content td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.preview-content th {
+  background-color: #f5f5f5;
+}
+
+.preview-content tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* 抽屉式布局优化 */
+.preview-panel:not(.expanded) .markdown-preview {
+  opacity: 0.8;
+  transform: translateX(5px);
+}
+
+.preview-panel.expanded .markdown-preview {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 响应式布局优化 */
+@media (max-width: 768px) {
+  .markdown-preview {
+    margin: 5px;
+  }
+  
+  .preview-content {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,46 @@
+.export-panel {
+  padding: 15px;
+}
+
+.export-panel h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.export-panel h4 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.export-info {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.export-info ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.export-info li {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.export-info li:last-child {
+  margin-bottom: 0;
+}
+
+.export-info strong {
+  color: #333;
+} 

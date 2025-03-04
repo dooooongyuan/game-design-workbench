@@ -1,0 +1,135 @@
+.character-data-io {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.data-io-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+}
+
+/* 按钮共享样式 */
+.export-button,
+.import-button {
+  flex: 1;
+  height: 48px !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+  position: relative;
+  overflow: hidden;
+  padding: 12px 16px !important;
+  font-size: 15px !important;
+}
+
+/* 导出按钮样式 */
+.export-button {
+  background-color: #1890ff !important;
+  border: 1px solid #1890ff !important;
+  color: white !important;
+}
+
+.export-button:hover {
+  background-color: #40a9ff !important;
+  border-color: #40a9ff !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(24, 144, 255, 0.3) !important;
+}
+
+.export-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.2) !important;
+}
+
+/* 导入按钮样式 */
+.import-button {
+  background-color: white !important;
+  border: 1px solid #d9d9d9 !important;
+  color: #666 !important;
+}
+
+.import-button:hover {
+  border-color: #1890ff !important;
+  color: #1890ff !important;
+  background-color: #f0f7ff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(24, 144, 255, 0.15) !important;
+}
+
+.import-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.1) !important;
+}
+
+/* 图标样式 */
+.custom-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px !important;
+  margin-right: 10px !important;
+}
+
+.custom-icon svg {
+  width: 1em;
+  height: 1em;
+}
+
+/* 确保Upload组件的宽度为100% */
+.character-data-io .ant-upload {
+  width: 100% !important;
+  display: block !important;
+}
+
+.character-data-io .ant-upload button {
+  width: 100% !important;
+}
+
+/* 确保Modal样式与整体风格一致 */
+.ant-modal-content {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.ant-modal-header {
+  background-color: #f8f9fa !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  padding: 16px 24px !important;
+}
+
+.ant-modal-title {
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.ant-modal-body {
+  padding: 24px !important;
+}
+
+.ant-modal-footer {
+  border-top: 1px solid #f0f0f0 !important;
+  padding: 12px 24px !important;
+}
+
+.ant-modal-footer button {
+  border-radius: 6px !important;
+  height: 36px !important;
+  padding: 0 16px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 576px) {
+  .data-io-buttons {
+    flex-direction: column;
+  }
+}
