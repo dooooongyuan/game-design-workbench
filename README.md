@@ -1,7 +1,14 @@
 # 策划工作台 (Game Design Workbench)
-
-<div aligin-"center">项目预览
+## 项目预览
+<div align="center">
+  
 ![image](https://github.com/user-attachments/assets/3c6044e0-b13f-498f-8edb-5b6b7039d142)
+![image](https://github.com/user-attachments/assets/d8dcad50-1a29-4a4b-aadb-f0ac3237ec22)
+![image](https://github.com/user-attachments/assets/e71882e9-311f-44ed-9ed1-a8274154b279)
+![image](https://github.com/user-attachments/assets/d9e81818-e208-4179-98e5-d974e0d16537)
+![image](https://github.com/user-attachments/assets/f78725b3-2d21-413e-ab27-e75aa54100fd)
+![image](https://github.com/user-attachments/assets/a07d95d4-3392-485d-91af-354569024225)
+![image](https://github.com/user-attachments/assets/04a71cb8-0627-4b05-8c21-e6f2e6bb2e51)
 
 </div>
 
