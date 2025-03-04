@@ -1,8 +1,8 @@
 # 策划工作台 (Game Design Workbench)
 
+<div aligin-"center">项目预览</div>
 
-
-<div align="center">项目预览
+<div align="center">
   
   ![GitHub stars](https://img.shields.io/github/stars/yourusername/game-design-workbench?style=social)
   ![GitHub forks](https://img.shields.io/github/forks/yourusername/game-design-workbench?style=social)
