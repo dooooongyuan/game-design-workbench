@@ -31,7 +31,7 @@
 </div>
 
 ## 📋 部署项目
-- 查看 CONTRIBUTING.md 文件
+- 查看 [CONTRIBUTING.md](CONTRIBUTING.md) 文件
 
 ## 📄 许可证
 
