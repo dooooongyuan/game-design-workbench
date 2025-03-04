@@ -3,7 +3,7 @@
 
 1. 克隆仓库
 ```bash
-git clone https://github.com/dooooonyuan/game-design-workbench.git
+git clone https://github.com/dooooongyuan/game-design-workbench.git
 cd game-design-workbench
 ```
 
