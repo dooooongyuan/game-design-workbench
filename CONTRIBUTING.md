@@ -1,6 +1,19 @@
 
 ## 项目部署-开发环境设置
 
+## 环境要求
+
+### 系统要求
+- 操作系统：Windows 10/11、macOS 10.15+、Linux (Ubuntu 18.04+)
+- 
+### 软件要求
+- Node.js：v16.x 或更高版本
+- npm：v8.x 或更高版本
+- Git：最新版本
+- 现代浏览器：Chrome、Firefox、Edge最新版本
+  
+### 部署步骤
+
 1. 克隆仓库
 ```bash
 git clone https://github.com/dooooongyuan/game-design-workbench.git
