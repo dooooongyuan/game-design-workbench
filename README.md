@@ -1,6 +1,9 @@
 # 策划工作台 (Game Design Workbench)
 
-<div aligin-"center">项目预览</div>
+<div aligin-"center">项目预览
+![image](https://github.com/user-attachments/assets/3c6044e0-b13f-498f-8edb-5b6b7039d142)
+
+</div>
 
 <div align="center">
   
